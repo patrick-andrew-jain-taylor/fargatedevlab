@@ -17,6 +17,7 @@ resource "aws_iam_role" "this" {
 
 resource "aws_iam_instance_profile" "this" {
   name = "fargatedevlab-admin-profile"
+  role = aws_iam_role.this.name
 }
 
 resource "aws_iam_role_policy_attachment" "this" {
